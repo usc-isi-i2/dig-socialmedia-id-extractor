@@ -29,7 +29,7 @@ class TestSocialMediaExtractor(unittest.TestCase):
 
         print updated_doc
 
-        self.assertEquals(updated_doc['social_media_ids'][0]['value'], {'twitter': 'diamondsquirt', 'instagram': None})
+        self.assertEquals(updated_doc['social_media_ids'][0]['result']['value'], {'twitter': 'diamondsquirt', 'instagram': None})
 
 if __name__ == '__main__':
     unittest.main()
