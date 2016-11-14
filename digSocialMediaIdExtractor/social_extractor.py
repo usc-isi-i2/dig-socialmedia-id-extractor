@@ -1,4 +1,3 @@
-from nltk.tokenize import sent_tokenize, word_tokenize
 import enchant
 
 TWITTER = 'twitter'
@@ -67,9 +66,3 @@ def is_valid_handle(handle, social_media):
             if(handle.isalnum()):
                 return True
     return False
-
-def get_word_tokens(text):
-    word_tokens = list()
-    for s in sent_tokenize(text):
-        word_tokens += word_tokenize(s)
-    return word_tokens
