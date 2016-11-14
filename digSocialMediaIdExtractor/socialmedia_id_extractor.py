@@ -11,15 +11,17 @@ class SocialMediaIdExtractor(Extractor):
         self.extractor = social_extractor.SocialExtractor(high_recall=True)
 
     def extract(self, doc):
-        #try:
+        try:
+            handles = None
             if 'tokens' in doc:
-                tokens = doc["tokens"][0]["result"][0]["value"]
-                handles = self.extractor.extract(tokens)
-                return handles
-            else:
-                return None
-        #except:
-        #    return "Failed"
+                tokens = doc["tokens"]
+                for token in tokens:
+                    if token["name"] == "tokens_high_recall":
+                        token_values = token["result"][0]["value"]
+                        handles = self.extractor.extract(token_values)
+            return handles
+        except:
+            return None
 
     def get_metadata(self):
         """Returns a copy of the metadata that characterizes this extractor"""

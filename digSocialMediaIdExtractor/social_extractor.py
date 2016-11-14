@@ -16,7 +16,7 @@ class SocialExtractor:
 
     def extract(self, tokens):
         tokens = map(lambda x:x.lower(),tokens)
-        print tokens
+        #print tokens
         handles = dict()
 
         handle = self.get_handle_after_social_media(tokens, TWITTER)
