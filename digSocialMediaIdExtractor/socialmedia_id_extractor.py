@@ -15,10 +15,7 @@ class SocialMediaIdExtractor(Extractor):
             handles = None
             if 'tokens' in doc:
                 tokens = doc["tokens"]
-                for token in tokens:
-                    if token["name"] == "tokens_high_recall":
-                        token_values = token["result"][0]["value"]
-                        handles = self.extractor.extract(token_values)
+                handles = self.extractor.extract(tokens)
             return handles
         except:
             return None
