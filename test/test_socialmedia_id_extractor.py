@@ -20,9 +20,7 @@ class TestSocialMediaExtractor(unittest.TestCase):
 
         updated_doc = extractor_processor.extract(doc)
 
-        #print updated_doc
-
-        self.assertEquals(updated_doc['social_media_ids'][0]['result']['value'], {'twitter': 'diamondsquirt', 'instagram': None})
+        self.assertEquals(updated_doc['social_media_ids'][0]['result']['value'], {'twitter': 'diamondsquirt'})
 
     def test_missing_tokens(self):
         doc = {"tokens":[]}

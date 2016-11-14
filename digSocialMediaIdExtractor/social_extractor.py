@@ -18,14 +18,21 @@ class SocialExtractor:
 
     def extract(self, tokens):
         tokens = map(lambda x:x.lower(),tokens)
-        #print tokens
         handles = dict()
-
+        is_extracted = False
         handle = self.get_handle_after_social_media(tokens, TWITTER)
-        handles['twitter'] = handle
+        if(handle is not None):
+            handles['twitter'] = handle
+            is_extracted = True
+
         handle = self.get_handle_after_social_media(tokens, INSTAGRAM)
-        handles['instagram'] = handle
-        return handles
+        if(handle is not None):
+            handles['instagram'] = handle
+            is_extracted = True
+
+        if(is_extracted):
+            return handles
+        return None
 
     def get_handle_after_social_media(self, tokens, social_media=TWITTER):
         handle = None
