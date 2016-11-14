@@ -6,7 +6,10 @@ INSTAGRAM = 'instagram'
 FACEBOOK = 'facebook'
 WECHAT = 'wechat'
 WHATSAPP = 'whatsapp'
-SOCIAL_MEDIAS = [TWITTER, INSTAGRAM, FACEBOOK, WECHAT, WHATSAPP]
+GOOGLE = 'google'
+LINKEDIN = 'linkedin'
+LINKDIN = 'linkdin'
+SOCIAL_MEDIAS = [TWITTER, INSTAGRAM, FACEBOOK, WECHAT, WHATSAPP, GOOGLE, LINKEDIN, LINKDIN]
 class SocialExtractor:
     def __init__(self, high_recall = True, forward_limit=11):
         self.is_high_recall = high_recall
