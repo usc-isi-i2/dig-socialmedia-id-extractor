@@ -1,2 +1,2 @@
 digExtractor>=0.3.7
-pyenchant
+digDictionaryExtractor>=0.3.0

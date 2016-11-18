@@ -5,10 +5,10 @@ import social_extractor
 
 class SocialMediaIdExtractor(Extractor):
 
-    def __init__(self):
+    def __init__(self, list_words_en, list_words_fr):
         self.renamed_input_fields = 'tokens'
         self.metadata = {"extractor": "SocialMediaIdExtractor"}
-        self.extractor = social_extractor.SocialExtractor(high_recall=True)
+        self.extractor = social_extractor.SocialExtractor(list_words_en, list_words_fr, high_recall=True)
 
     def extract(self, doc):
         try:
